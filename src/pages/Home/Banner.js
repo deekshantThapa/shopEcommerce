@@ -6,7 +6,7 @@ export default function Banner() {
             <div className="banner-content">
               <h2>Find clothes that matches your style</h2>
               <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-              <button className="btn-primnary">Shop Now</button>
+              <button className="btn-primary">Shop Now</button>
             </div>
           </div>
         </div>

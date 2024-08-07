@@ -9,12 +9,12 @@ html{
 }
 
 :root{
-  --primary: #384955;
+  --primary: #000;
   --secondary: #27363b;
+  --light-gray-shade: #F2F0F1;
   --hover-color: #91ADC2;
   --light-colar: #f08080;
   --white: #fff;
-  --black: #000;
   --poppins-font: "Poppins", sans-serif;
 }
 
@@ -81,20 +81,23 @@ a:hover{
   color: var(--hover-color);
 }
 
-button{
-  padding: 8px 10px;
-  border-radius: 5px;
+.btn-primary{
+  padding: 8px 25px;
+  border-radius: 30px;
   font-size: 16px;
   font-family: var(--poppins-font);
   transition: all 0.2s linear 0s;
   cursor: pointer;
   display: block;
   margin-bottom: 10px;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
 }
 
-button:hover{
-  background: var(--light-red);
-  color: var(--white);
+.btn-primary:hover{
+  /* background: var(--light-red); */
+  /* color: var(--white); */
 }
 
 input[type="text"],
@@ -112,7 +115,7 @@ select{
   padding: 8px 12px;
   font-size: 16px;
   width: 100%;
-  border: 1px solid var(--black);
+  border: 1px solid var(--primary);
 }
 
 input[type="text"]:focus,
@@ -182,4 +185,13 @@ nav li {
 .site-logo a {
   font-size: 30px;
   font-weight: 700;
+}
+
+.banner{
+  background: var(--light-gray-shade);
+  padding: 40px 0;
+}
+
+.banner-content {
+  max-width: 580px;
 }
