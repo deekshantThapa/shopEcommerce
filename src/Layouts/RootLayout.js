@@ -4,10 +4,10 @@ import Header from "../pages/components/Header";
 export default function RootLayout() {
   return (
     <>
-        <Header/>
-        <main>
-            <Outlet/>
-        </main>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }

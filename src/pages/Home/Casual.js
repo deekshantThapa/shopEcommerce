@@ -31,5 +31,5 @@ export const CasualClothesLoader = async () => {
     return snapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
-      }));
+    }));
 }

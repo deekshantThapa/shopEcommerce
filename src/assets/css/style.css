@@ -195,3 +195,16 @@ nav li {
 .banner-content {
   max-width: 580px;
 }
+
+.contact-form-wrap {
+  max-width: 400px;
+}
+
+.contact-form .input-wrap {
+  margin-bottom: 15px;
+}
+
+.contact-form .input-wrap label{
+  display: inline-block;
+  margin-bottom: 5px;
+}

@@ -1,6 +1,6 @@
 export default function Banner() {
   return (
-    <div className="banner">
+    <section className="banner">
         <div className="container">
           <div className="banner-content-wrap">
             <div className="banner-content">
@@ -10,6 +10,6 @@ export default function Banner() {
             </div>
           </div>
         </div>
-    </div>
+    </section>
   )
 }
