@@ -1,11 +1,11 @@
 import Banner from "./Banner";
-import Casual from "./Casual";
+import NewArrivals from "./NewArrivals";
 
 export default function Home() {
   return (
     <>
       <Banner/>
-      <Casual/>
+      <NewArrivals/>
     </>
   )
 }

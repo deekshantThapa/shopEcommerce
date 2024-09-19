@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import SearchBar from "./SearchBar";
+import LoginAndCart from "./LoginAndCart";
 
 export default function Header() {
   return (
-    <header>
+    <header className="site-header">
       <div className="container">
         <div className="hgroup-wrap">
           <div className="site-logo">
@@ -12,6 +13,7 @@ export default function Header() {
           </div>
           <Navigation/>
           <SearchBar/>
+          <LoginAndCart/>
         </div>
       </div>
     </header>

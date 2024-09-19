@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export default function Navigation() {
   return (
-    <nav>
+    <nav className="navigation">
         <ul>
             <li><NavLink>Shop</NavLink></li>
             <li><NavLink>On Sale</NavLink></li>

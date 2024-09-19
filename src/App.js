@@ -5,15 +5,17 @@ import RootLayout from "./Layouts/RootLayout";
 
 // pages
 import Home from "./pages/Home/Home";
-import { CasualClothesLoader } from "./pages/Home/Casual";
+import { NewArrivalsClothesLoader } from "./pages/Home/NewArrivals";
 import Contact from "./pages/Contact";
 
 const customRouter = createBrowserRouter(
   createRoutesFromElements(
 
     <Route path="/" element={<RootLayout/>}>
-      <Route index element={<Home/>} loader={CasualClothesLoader}/>
+
+      <Route index element={<Home/>} loader={NewArrivalsClothesLoader}/>
       <Route path="contact" element={<Contact/>}/>
+      
     </Route>
 
   )
