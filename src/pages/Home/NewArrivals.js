@@ -1,6 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
-import { useLoaderData } from "react-router-dom";
-import { db } from "../../firebase";
+import { Link, useLoaderData } from "react-router-dom";
+import { db } from "../../firebase/firebase";
 
 export default function NewArrivals() {
     const fetchedData = useLoaderData();
@@ -20,7 +20,7 @@ export default function NewArrivals() {
                             <img src={item.imageUrl} alt="" />
                         </figure>
                         <div className="item-info">
-                            <h4>{item.title}</h4>
+                            <Link to={item.id}><h4>{item.title}</h4></Link>
                             <span className="rating">{item.rating}/5</span>
                             <div className="price-discount-wrap">
                                 <span className="discounted-price">${item.discountedPrice}</span>
@@ -38,11 +38,11 @@ export default function NewArrivals() {
 
 
 // loader function
-export const NewArrivalsClothesLoader = async () => {
+export const loadNewArrivalsClothes = async () => {
     const colRef = collection(db, 'new-arrivals');
     const snapshot = await getDocs(colRef);
 
     return snapshot.docs.map(doc => ({
         ...doc.data(), id: doc.id
-    }));
+    }))
 }
