@@ -5,7 +5,7 @@ import { db } from "../../firebase/firebase";
 export default function NewArrivals() {
     const fetchedData = useLoaderData();
     
-    console.log(fetchedData);
+    // console.log(fetchedData);
 
   return (
     <section className="new-arrivals-section">
@@ -16,18 +16,20 @@ export default function NewArrivals() {
             <div className="new-arrival-items cloth-items-wrap">
                 {fetchedData.map(item => (
                     <div className="item" key={item.id}>
-                        <figure className="featured-image">
-                            <img src={item.imageUrl} alt="" />
-                        </figure>
-                        <div className="item-info">
-                            <Link to={item.id}><h4>{item.title}</h4></Link>
-                            <span className="rating">{item.rating}/5</span>
-                            <div className="price-discount-wrap">
-                                <span className="discounted-price">${item.discountedPrice}</span>
-                                <span className="actual-price">${item.actualPrice}</span>
-                                <span className="discount-percent">-{item.discountPercent}%</span>
+                        <Link to={item.id}>
+                            <figure className="featured-image">
+                                <img src={item.imageUrl} alt="" />
+                            </figure>
+                            <div className="item-info">
+                                <h4>{item.title}</h4>
+                                <span className="rating">{item.rating}/5</span>
+                                <div className="price-discount-wrap">
+                                    <span className="discounted-price price">${item.discountedPrice}</span>
+                                    <span className="actual-price price">${item.actualPrice}</span>
+                                    <span className="discount-percent">-{item.discountPercent}%</span>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 ))}
             </div>

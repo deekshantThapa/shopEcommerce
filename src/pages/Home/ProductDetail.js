@@ -10,7 +10,21 @@ export default function ProductDetail(){
     return(
         <section className="single-product-detail">
             <div className="container">
-                <p>{singleProductData.title}</p>
+                <div className="single-product-detail-wrap">
+                    <figure className="featured-image">
+                        <img src={singleProductData.imageUrl} alt="" />
+                    </figure>
+                    <div className="product-detail-content">
+                        <h3>{singleProductData.title}</h3>
+                        <span className="rating">Rating: {singleProductData.rating}/5</span>
+                        <div className="price-discount-wrap">
+                            <span className="discounted-price price">${singleProductData.discountedPrice}</span>
+                            <span className="actual-price price">${singleProductData.actualPrice}</span>
+                            <span className="discount-percent">-{singleProductData.discountPercent}%</span>
+                        </div>
+                        <p>{singleProductData.description}</p>
+                    </div>
+                </div>
             </div>
         </section>
     )

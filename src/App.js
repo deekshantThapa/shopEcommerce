@@ -2,7 +2,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 // layouts
 import RootLayout from "./Layouts/RootLayout";
-import HomeLayout from "./Layouts/HomeLayout";
 
 // pages
 import Home from "./pages/Home/Home";
