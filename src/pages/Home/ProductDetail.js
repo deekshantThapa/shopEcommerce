@@ -1,11 +1,19 @@
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../components/CartContext";
 
 export default function ProductDetail(){
     const singleProductData = useLoaderData();
+    // console.log(singleProductData);
 
-    console.log(singleProductData);
+    const {addToCart} = useContext(CartContext);
+
+    const handleAddToCart = () => {
+        addToCart(singleProductData);
+        console.log('added');
+    }
 
     return(
         <section className="single-product-detail">
@@ -23,6 +31,7 @@ export default function ProductDetail(){
                             <span className="discount-percent">-{singleProductData.discountPercent}%</span>
                         </div>
                         <p>{singleProductData.description}</p>
+                        <button onClick={handleAddToCart} className="btn-primary add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>

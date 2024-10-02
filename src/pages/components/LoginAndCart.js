@@ -1,12 +1,30 @@
+import { useContext } from 'react';
 import cartIcon from '../../assets/icons/cart-icon.png';
 import profileIcon from '../../assets/icons/profile-icon.png';
+import { CartContext } from './CartContext';
 
 export default function LoginAndCart(){
+
+    const {cartItems} = useContext(CartContext);
+
     return(
         <div className="login-and-cart">
-            <span className="login">
-                <img src={cartIcon} alt="" />
-            </span>
+            <div className="cart">
+                <span className="cart-icon">
+                    <img src={cartIcon} alt="" />
+                </span>
+                <div className="cart-basket">
+                    {cartItems.length > 0 ? (
+                        <ul>
+                            {cartItems.map((item, index) => (
+                                <li key={index}>{item.title}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>Your cart is empty</p>
+                    )}
+                </div>
+            </div>
             <span className="profile">
                 <img src={profileIcon} alt="" />
             </span>

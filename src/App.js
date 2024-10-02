@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import { loadNewArrivalsClothes } from "./pages/Home/NewArrivals";
 import Contact from "./pages/Contact";
 import ProductDetail, { loadProductDetail } from "./pages/Home/ProductDetail";
+import { CartProvider } from "./pages/components/CartContext";
 
 const customRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,8 @@ const customRouter = createBrowserRouter(
 
 export default function App(){
   return(
-    <RouterProvider router={customRouter} />
+    <CartProvider>
+      <RouterProvider router={customRouter} />
+    </CartProvider>
   )
 }
