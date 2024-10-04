@@ -15,11 +15,19 @@ export default function LoginAndCart(){
                 </span>
                 <div className="cart-basket">
                     {cartItems.length > 0 ? (
-                        <ul>
+                        <>
                             {cartItems.map((item, index) => (
-                                <li key={index}>{item.title}</li>
+                                <div className="basket-item" key={index}>
+                                    <figure className="item-image">
+                                        <img src={item.imageUrl} alt="" />
+                                    </figure>
+                                    <div className="item-detail-short">
+                                        <h6>{item.title}</h6>
+                                        <span>${item.discountedPrice}</span>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </>
                     ) : (
                         <p>Your cart is empty</p>
                     )}

@@ -215,6 +215,7 @@ nav li {
 
 .login-and-cart .cart-icon{
   cursor: pointer;
+  display: block;
 }
 
 .login-and-cart .cart-basket {
@@ -222,7 +223,7 @@ nav li {
   background: var(--white);
   box-shadow: 0px 3px 14px 0 rgba(0, 0, 0, 0.33);
   padding: 10px;
-  width: 250px;
+  width: 300px;
   right: 0;
   top: 100%;
   border-radius: 5px;
@@ -233,6 +234,18 @@ nav li {
 .login-and-cart .cart:hover .cart-basket{
   opacity: 1;
   visibility: visible;
+}
+
+.cart-basket .basket-item {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: calc(30% - 5px) calc(70% - 5px);
+  align-items: center;
+}
+
+.cart-basket .basket-item:not(:last-child){
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gray);
 }
 
 /* header end */
