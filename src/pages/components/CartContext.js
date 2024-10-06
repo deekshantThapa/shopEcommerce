@@ -23,7 +23,7 @@ export const CartProvider = ({children}) => {
 
             else {
                 return [...prevItems, { ...item, quantity: 1 }];
-              }
+            }
         })
     }
 

@@ -24,6 +24,7 @@ export default function LoginAndCart(){
                                     <div className="item-detail-short">
                                         <h6>{item.title}</h6>
                                         <span>${item.discountedPrice}</span>
+                                        <span className='item-quantity'>X {item.quantity}</span>
                                     </div>
                                 </div>
                             ))}

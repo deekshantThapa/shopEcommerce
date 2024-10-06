@@ -12,7 +12,6 @@ export default function ProductDetail(){
 
     const handleAddToCart = () => {
         addToCart(singleProductData);
-        // console.log('added');
     }
 
     return(

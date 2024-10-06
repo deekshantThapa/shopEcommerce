@@ -248,6 +248,10 @@ nav li {
   border-bottom: 1px solid var(--gray);
 }
 
+.cart-basket .item-quantity {
+  margin-left: 5px;
+}
+
 /* header end */
 
 /* banner start */
