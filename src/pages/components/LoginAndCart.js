@@ -26,6 +26,7 @@ export default function LoginAndCart(){
                                         <h6>{item.title}</h6>
                                         <span>${item.discountedPrice}</span>
                                         <span className='item-quantity'>X {item.quantity}</span>
+                                        <button className='delete'></button>
                                     </div>
                                 </div>
                             ))}
