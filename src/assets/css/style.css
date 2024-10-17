@@ -292,6 +292,10 @@ nav li {
   width: calc(25% - 20px);
 }
 
+.item a{
+  display: block;
+}
+
 .item .featured-image {
   background: var(--light-gray);
   border-radius: 15px;

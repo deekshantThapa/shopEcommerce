@@ -1,13 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState([]);
+    // const [cartItems, setCartItems] = useState([]);
 
-    // const addToCart = (product) => {
-    //     setCartItems(prevItems => [...prevItems, product]);
-    // }
+    // using local storage to update cart items when on page refresh 
+    const [cartItems, setCartItems] = useState(() => {
+        const savedCartItems = localStorage.getItem("cartItems");
+        return savedCartItems ? JSON.parse(savedCartItems) : [];
+    })
 
     const addToCart = (item) => {
         setCartItems((prevItems) => {
@@ -15,9 +17,7 @@ export const CartProvider = ({children}) => {
 
             if (existingItem) {
                 return prevItems.map((cartItem) =>
-                    cartItem.id === item.id
-                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-                        : cartItem
+                    cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 }: cartItem
                 );
             }
 
@@ -26,6 +26,11 @@ export const CartProvider = ({children}) => {
             }
         })
     }
+
+    // updating localStorage whenever cartItems change
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems])
 
     return(
         <CartContext.Provider value={{cartItems, addToCart}}>

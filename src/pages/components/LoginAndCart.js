@@ -13,6 +13,7 @@ export default function LoginAndCart(){
                 <span className="cart-icon">
                     <img src={cartIcon} alt="" />
                 </span>
+                <span className='cart-number'></span>
                 <div className="cart-basket">
                     {cartItems.length > 0 ? (
                         <>

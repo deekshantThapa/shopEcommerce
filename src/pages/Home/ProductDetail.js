@@ -45,5 +45,5 @@ export const loadProductDetail = async ({params}) => {
     const docRef = doc(db, 'new-arrivals', id);
     const docSnap = await getDoc(docRef);
 
-    return docSnap.data();
+    return {...docSnap.data(), id};
 }

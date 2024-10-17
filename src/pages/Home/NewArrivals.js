@@ -4,7 +4,6 @@ import { db } from "../../firebase/firebase";
 
 export default function NewArrivals() {
     const fetchedData = useLoaderData();
-    
     // console.log(fetchedData);
 
   return (
